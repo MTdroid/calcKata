@@ -14,6 +14,12 @@ public class Calculator {
 
     public static String calc(String input) throws IOException{
         String[] arr = input.split(" ");
+        if (arr.length >3){
+            throw new IOException("больше 3 символов");
+        }
+        if (arr.length <3) {
+            throw new IOException("нет пробелов между символами или не хватает символов");
+        }
         int a = Integer.parseInt(arr[0]);
         int b = Integer.parseInt(arr[2]);
         String operator = arr[1];
